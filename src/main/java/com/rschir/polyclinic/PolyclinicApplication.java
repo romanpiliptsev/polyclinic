@@ -9,8 +9,8 @@ import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfigurat
 @SpringBootApplication(exclude = HibernateJpaAutoConfiguration.class)
 public class PolyclinicApplication {
     public static void main(String[] args) {
-        DBService db = new DBServiceImpl();
-        DBServiceImpl.getHSQLConnection();
+//        DBService db = new DBServiceImpl();
+//        DBServiceImpl.getHSQLConnection();
 //        db.cleanDB();
 //        db.createDB();
 //        db.populateDB();

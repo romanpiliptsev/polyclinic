@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Objects;
 
 @Entity
-@Table(name = "recipePriority")
+@Table(name = "recipe_priority")
 @JsonIgnoreProperties({ "recipes" })
 public class RecipePriority {
 

@@ -32,15 +32,15 @@ public class AppConfig {
 
         // Set the jdbc driver
         try {
-            myDataSource.setDriverClass(env.getProperty("db.driver"));
+            myDataSource.setDriverClass(env.getProperty("spring.datasource.driver-class-name"));
         } catch (PropertyVetoException exc) {
             throw new RuntimeException(exc);
         }
 
         // Set database connection props
-        myDataSource.setJdbcUrl(env.getProperty("db.url"));
-        myDataSource.setUser(env.getProperty("db.user"));
-        myDataSource.setPassword(env.getProperty("db.password"));
+        myDataSource.setJdbcUrl(env.getProperty("spring.datasource.url"));
+        myDataSource.setUser(env.getProperty("spring.datasource.username"));
+        myDataSource.setPassword(env.getProperty("spring.datasource.password"));
 
         // Set connection pool props
         myDataSource.setInitialPoolSize(getIntProperty("connection.pool.initialPoolSize"));
@@ -65,7 +65,7 @@ public class AppConfig {
         return intPropVal;
     }
 
-    @Bean
+    @Bean(name="entityManagerFactory")
     public LocalSessionFactoryBean sessionFactory() {
         // Create session factory
         LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
