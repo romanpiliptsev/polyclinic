@@ -1,7 +1,5 @@
 package com.rschir.polyclinic;
 
-import com.rschir.polyclinic.dbservice.services.DBServiceImpl;
-import com.rschir.polyclinic.dbservice.services.interfaces.DBService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration;

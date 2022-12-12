@@ -10,13 +10,11 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
-@Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
+@Configuration
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
-
     private final DoctorServiceImpl doctorService;
-
     public SecurityConfig(DoctorServiceImpl doctorService) {
         this.doctorService = doctorService;
     }
@@ -28,7 +26,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .passwordEncoder(new BCryptPasswordEncoder());
     }
 
-    // Secure the endpoints with HTTP Basic authentication
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.cors().and()
@@ -43,24 +40,5 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .httpBasic()
                 .and()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
-//        http
-//                .csrf()
-//                .disable()
-//                .cors()
-//                .disable()
-//                .authorizeRequests()
-////                .antMatchers("/").permitAll()
-////                .antMatchers("/css/**").permitAll()
-////                .antMatchers("/js/**").permitAll()
-////                .antMatchers("/img/**").permitAll()
-////                .antMatchers("/products").permitAll()
-////                .antMatchers("/product").permitAll()
-////                .antMatchers("/login", "/sign").permitAll()
-//                .antMatchers("/patients").hasAuthority("doctor")
-//                .anyRequest().authenticated()
-//                .and()
-//                .formLogin().and().logout().logoutSuccessUrl("/").and().sessionManagement()
-//                .sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED)
-//                .sessionFixation().migrateSession();
     }
 }

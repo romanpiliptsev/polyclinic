@@ -3,7 +3,6 @@ package com.rschir.polyclinic.dbservice.services;
 import com.rschir.polyclinic.dbservice.dao.interfaces.DoctorDao;
 import com.rschir.polyclinic.dbservice.dao.interfaces.PatientDao;
 import com.rschir.polyclinic.dbservice.entities.Doctor;
-import com.rschir.polyclinic.dbservice.entities.Patient;
 import com.rschir.polyclinic.dbservice.services.interfaces.DoctorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
