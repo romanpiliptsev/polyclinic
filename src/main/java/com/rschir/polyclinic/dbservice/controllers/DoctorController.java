@@ -16,8 +16,6 @@ public class DoctorController {
     private DoctorService doctorService;
     private ObjectMapper mapper = new ObjectMapper();
 
-
-
     @RequestMapping(value = "/doctors", method = RequestMethod.GET)
     public List<Doctor> doctors() {
         return doctorService.getAll();

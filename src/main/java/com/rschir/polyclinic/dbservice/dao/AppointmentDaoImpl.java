@@ -13,7 +13,7 @@ import java.util.List;
 @Repository
 public class AppointmentDaoImpl implements AppointmentDao {
 
-    @Autowired
+//    @Autowired
     private SessionFactory sessionFactory;
 
     public AppointmentDaoImpl(SessionFactory sessionFactory) {
